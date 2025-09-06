@@ -3,47 +3,118 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sachin | Visionary Coder</title>
+  <title>Sachin Kumar | coderz</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: #fff;
+      font-family: 'Courier New', monospace;
+      background-color: #0a0a0a;
+      color: #00ffcc;
+      overflow-x: hidden;
     }
 
     header {
       text-align: center;
-      padding: 60px 20px 20px;
+      padding: 80px 20px 40px;
+      border-bottom: 2px solid #00ffcc;
     }
 
-    header h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
+    @keyframes blink {
+      50% { opacity: 0; }
     }
 
-    header p {
+    @keyframes typewriter {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes glitch {
+      0% { text-shadow: 2px 0 red, -2px 0 cyan; }
+      20% { text-shadow: -2px 0 red, 2px 0 cyan; }
+      40% { text-shadow: 2px 0 red, -2px 0 cyan; }
+      60% { text-shadow: -2px 0 red, 2px 0 cyan; }
+      80% { text-shadow: 2px 0 red, -2px 0 cyan; }
+      100% { text-shadow: 0 0 10px #00ffff; }
+    }
+
+    @keyframes pulse {
+      0% { text-shadow: 0 0 10px #00ffff; }
+      50% { text-shadow: 0 0 20px #00ffff; }
+      100% { text-shadow: 0 0 10px #00ffff; }
+    }
+
+    .boot-text {
       font-size: 1.2em;
+      color: #00ffcc;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #00ffcc;
+      animation: typewriter 3s steps(30, end), blink 1s step-end infinite;
+      width: 100%;
+      max-width: 300px;
+      margin: auto;
+    }
+
+    .name {
+      font-size: 3.5em;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: #00ffff;
+      animation: glitch 1.5s infinite;
+      margin-bottom: 10px;
+    }
+
+    .tagline {
       font-style: italic;
-      color: #ccc;
+      color: #00ffcc;
+      font-size: 1em;
     }
 
     .container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
       max-width: 900px;
       margin: auto;
       padding: 40px 20px;
     }
 
     section {
-      margin-bottom: 40px;
+      border: 2px solid #00ffcc;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00ffcc;
+      background-color: #111;
+      animation: fadeUp 1s ease-out forwards;
+      opacity: 0;
     }
 
+    section:nth-child(1) { animation-delay: 0.5s; }
+    section:nth-child(2) { animation-delay: 1s; }
+    section:nth-child(3) { animation-delay: 1.5s; }
+
     h2 {
-      border-left: 5px solid #00ffff;
-      padding-left: 15px;
-      font-size: 1.8em;
+      font-size: 1.5em;
+      color: #00ffff;
+      border-bottom: 1px dashed #00ffff;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+
+    p, ul li {
+      color: #e0f7fa;
       margin-bottom: 10px;
     }
 
@@ -52,40 +123,44 @@
       padding-left: 0;
     }
 
-    ul li {
-      background: rgba(255, 255, 255, 0.1);
-      margin: 8px 0;
-      padding: 10px 15px;
-      border-radius: 5px;
+    ul li::before {
+      content: "▸ ";
+      color: #00ffcc;
     }
 
     .quote {
-      font-size: 1.5em;
       text-align: center;
-      margin-top: 60px;
+      font-size: 1.3em;
       font-style: italic;
       color: #00ffff;
+      margin-top: 40px;
+      text-shadow: 0 0 10px #00ffff;
+      animation: pulse 2s infinite;
     }
 
     footer {
       text-align: center;
       padding: 20px;
       font-size: 0.9em;
-      color: #aaa;
+      color: #888;
+      border-top: 2px solid #00ffcc;
+      background-color: #000;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Sachin</h1>
-    <p>SSDIAN | Solo Grind | Emotional Independence | Future Coder</p>
+    <div class="boot-text">[System Booting...]</div>
+    <h1 class="name">Sachin Kumar</h1>
+    <p class="tagline">SSDIAN | Solo Grind | Emotional Independence | Future Coder</p>
   </header>
 
   <div class="container">
     <section>
-      <h2>About Me</h2>
-      <p>"Main U.P main Mainpuri ke ek chhote  se Gaao se hoon, lekin meri soch kisi boundary mein nahi aati. Emotional setbacks ko main system bana ke handle karta hoon, aur har din apne aap ko upgrade karta hoon—mindset, skills aur vision ke level pe. Main duniya ke rules follow nahi karta… main apne khud ke rules likhta hoon."
-"Commerce meri journey ka ek chapter hai, coding meri kahaani ka soul. Main grades ke liye nahi, growth ke liye grind karta hoon—kyunki asli value marks mein nahi, mindset mein hoti hai."</p>
+      <h2>Intro</h2>
+      <p>"Main U.P main Mainpuri ke ek chhote se Gaao se hoon, lekin meri soch kisi boundary mein nahi aati. Emotional setbacks ko main system bana ke handle karta hoon, aur har din apne aap ko upgrade karta hoon—mindset, skills aur vision ke level pe. Main duniya ke rules follow nahi karta… main apne khud ke rules likhta hoon."<br><br>
+ "Class 11th Commerce meri journey ka ek chapter hai, coding meri kahaani ka soul. Main grades ke liye nahi, growth ke liye grind karta hoon—kyunki asli value marks mein nahi, mindset mein hoti hai."</p>
     </section>
 
     <section>
@@ -93,15 +168,12 @@
       <ul>
         <li>System Optimizer Mindset</li>
         <li>Tech Troubleshooting Expert</li>
-        <li>Respectful & Effective Talk
-</li>
+        <li>Respectful & Effective Talk</li>
         <li>Ethical Hacking Learner</li>
-        <li>Personal Branding Architect
-</li>
-
-        <li>Emotional Independence
-</li> 
-        <li>Web Dovelopment</li>  </ul>
+        <li>Personal Branding Architect</li>
+        <li>Emotional Independence</li>
+        <li>Web Development</li>
+      </ul>
     </section>
 
     <section>
@@ -109,8 +181,8 @@
       <ul>
         <li>JEECUP 2026 → Diploma in CS → B.Tech in Cyber Security</li>
         <li>Build a career in tech with high-growth roles</li>
-        <li>I'm on the path to becoming an ethical hacking expert—learning step by step, the right way</li>
-        <li>I love to travel—exploring new places keeps my mind fresh and my vision wide</li>
+        <li>Become an ethical hacking expert—learning step by step</li>
+        <li>I love to travel—exploring new places keeps my mind fresh and my vision wid</li>
       </ul>
     </section>
 
@@ -118,7 +190,8 @@
   </div>
 
   <footer>
-    Made with grind & vision by Sachin kumar © 2025
+    Made by Sachin Kumar © 2025
   </footer>
+
 </body>
 </html>
